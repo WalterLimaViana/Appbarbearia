@@ -1,6 +1,6 @@
-# flutter_floating_menu
+# appBarbearia
 
-Projeto Barebaria, utilizando o flutter floating menu
+O appBarbearia é um aplicativo de agendamento de serviços para uma barbearia.
 
 ## Objetivo
 
