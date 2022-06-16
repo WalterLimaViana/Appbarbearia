@@ -13,22 +13,33 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Stack(children: [
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Opacity(
+                opacity: 0.3,
+                child: Image.asset(
+                  'img/barber_background.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
             Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Center(
-                    child: ClipOval(
-                      child: Container(
-                        width: 220,
-                        height: 220,
-                        child: Opacity(
-                            opacity: 0.6,
-                            child: Image.asset('img/logoBarber.png')),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10, bottom: 5),
+                    child: Center(
+                      child: ClipOval(
+                        child: Container(
+                          width: 280,
+                          height: 280,
+                          child: Opacity(
+                              opacity: 0.7,
+                              child: Image.asset('img/logoBarber.png')),
+                        ),
                       ),
                     ),
                   ),
@@ -135,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
-          ]),
+          ],
         ),
       ),
     );
