@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/pages/category_list_page.dart';
+import 'package:flutter_floating_menu/pages/login_page.dart';
 import 'package:flutter_floating_menu/pages/home_page.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
