@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_floating_menu/pages/add_event.dart';
 import 'package:flutter_floating_menu/pages/login_page.dart';
 import 'package:flutter_floating_menu/pages/home_page.dart';
 
@@ -16,7 +17,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home: HomePage(),
+      home: AddEvent(),
     );
   }
 }
