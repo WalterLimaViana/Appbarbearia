@@ -12,7 +12,7 @@ class _CalendarioPageState extends State<CalendarioPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Agendamento')),
+      appBar: AppBar(title: Center(child: Text('Agendamentos'))),
       body: SfCalendar(
         view: CalendarView.month,
         initialSelectedDate: DateTime.now(),

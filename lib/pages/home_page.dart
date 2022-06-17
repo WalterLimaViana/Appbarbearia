@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_floating_menu/helpers/utils.dart';
 import 'package:flutter_floating_menu/models/category.dart';
+import 'package:flutter_floating_menu/pages/add_event.dart';
 import 'package:flutter_floating_menu/pages/calendario_page.dart';
 import 'package:flutter_floating_menu/widgtes/fab_menu_button.dart';
 
@@ -109,6 +110,6 @@ class _HomePageState extends State<HomePage>
 
   onCardClick() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => CalendarioPage()));
+        context, MaterialPageRoute(builder: (context) => AddEvent()));
   }
 }
