@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_floating_menu/helpers/util.dart';
 import 'package:flutter_floating_menu/models/event.dart';
+import 'package:flutter_floating_menu/provider/event_provider.dart';
+import 'package:provider/provider.dart';
 
 class AddEvent extends StatefulWidget {
   final Event? event;
@@ -72,7 +74,7 @@ class _AddEventState extends State<AddEvent> {
             primary: Colors.transparent,
             shadowColor: Colors.transparent,
           ),
-          onPressed: () {},
+          onPressed: saveForm,
           icon: Icon(Icons.done),
           label: Text('Salvar'),
         )
@@ -86,7 +88,7 @@ class _AddEventState extends State<AddEvent> {
           border: UnderlineInputBorder(),
           hintText: 'Serviço',
         ),
-        onFieldSubmitted: (_) {},
+        onFieldSubmitted: (_) => saveForm(),
         validator: (title) => title != null && title.isEmpty
             ? 'Serviço não pode ficar vazio'
             : null,
@@ -129,13 +131,13 @@ class _AddEventState extends State<AddEvent> {
               flex: 2,
               child: buildDropdownField(
                 text: Util.toDate(toDate),
-                onClicked: () {},
+                onClicked: () => pickToDateTime(pickDate: true),
               ),
             ),
             Expanded(
               child: buildDropdownField(
                 text: Util.toTime(toDate),
-                onClicked: () {},
+                onClicked: () => pickToDateTime(pickDate: false),
               ),
             ),
           ],
@@ -145,7 +147,38 @@ class _AddEventState extends State<AddEvent> {
     final date = await pickDateTime(fromDate, pickDate: pickDate);
     if (date == null) return;
 
+    if (date.isAfter(toDate)) {
+      toDate = DateTime(
+        date.year,
+        date.month,
+        date.day,
+        toDate.hour,
+        toDate.minute,
+      );
+    }
+
     setState(() => fromDate = date);
+  }
+
+  Future pickToDateTime({required bool pickDate}) async {
+    final date = await pickDateTime(
+      toDate,
+      pickDate: pickDate,
+      firstDate: pickDate ? fromDate : null,
+    );
+    if (date == null) return;
+
+    if (date.isAfter(toDate)) {
+      toDate = DateTime(
+        date.year,
+        date.month,
+        date.day,
+        toDate.hour,
+        toDate.minute,
+      );
+    }
+
+    setState(() => toDate = date);
   }
 
   Future<DateTime?> pickDateTime(
@@ -175,7 +208,7 @@ class _AddEventState extends State<AddEvent> {
         initialTime: TimeOfDay.fromDateTime(initialDate),
       );
 
-      if (TimeOfDay == null) return null;
+      if (timeOfDay == null) return null;
 
       final date = DateTime(
         initialDate.year,
@@ -184,8 +217,8 @@ class _AddEventState extends State<AddEvent> {
       );
 
       final time = Duration(
-        hours: timeOfDay!.hour,
-        minutes: timeOfDay!.minute,
+        hours: timeOfDay.hour,
+        minutes: timeOfDay.minute,
       );
 
       return date.add(time);
@@ -212,4 +245,21 @@ class _AddEventState extends State<AddEvent> {
           child,
         ],
       );
+
+  Future saveForm() async {
+    final isValid = _formKey.currentState!.validate();
+
+    if (isValid) {
+      final event = Event(
+        title: titleController.text,
+        description: 'Descrição',
+        from: fromDate,
+        to: toDate,
+      );
+
+      final provider = Provider.of<EventProvider>(context, listen: true);
+      provider.addEvent(event);
+      Navigator.of(context).pop();
+    }
+  }
 }
