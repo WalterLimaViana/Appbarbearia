@@ -55,6 +55,7 @@ class _AddEventState extends State<AddEvent> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
+                criaDropDownButton(),
                 buildTitle(),
                 SizedBox(
                   height: 12,
@@ -86,7 +87,6 @@ class _AddEventState extends State<AddEvent> {
         ),
         decoration: InputDecoration(
           border: UnderlineInputBorder(),
-          hintText: 'Serviço',
         ),
         onFieldSubmitted: (_) => saveForm(),
         validator: (title) => title != null && title.isEmpty
@@ -261,5 +261,27 @@ class _AddEventState extends State<AddEvent> {
       provider.addEvent(event);
       Navigator.of(context).pop();
     }
+  }
+
+  Widget criaDropDownButton() {
+    String dropDownValue = 'Cabelo';
+
+    return DropdownButton<String>(
+      value: dropDownValue,
+      icon: Icon(Icons.arrow_drop_down),
+      elevation: 10,
+      items: <String>['Barba', 'Cabelo', 'Cabelo e Barba']
+          .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      onChanged: (String? newValue) {
+        setState(() {
+          dropDownValue = newValue!;
+        });
+      },
+    );
   }
 }
