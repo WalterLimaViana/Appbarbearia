@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_floating_menu/models/event_data_source.dart';
+import 'package:flutter_floating_menu/pages/event_viewing_page.dart';
 import 'package:flutter_floating_menu/provider/event_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
@@ -35,6 +36,14 @@ class _TaskWidgetState extends State<TaskWidget> {
           dataSource: EventDataSource(provider.events),
           initialDisplayDate: provider.selectedDate,
           appointmentBuilder: appointmentBuilder,
+          onTap: (details) {
+            if (details.appointments == null) return;
+
+            final event = details.appointments!.first;
+
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => EventViewingPage(event: event)));
+          },
         ));
   }
 
