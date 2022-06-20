@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_floating_menu/helpers/util.dart';
+import 'package:flutter_floating_menu/helpers/utils.dart';
+import 'package:flutter_floating_menu/models/category.dart';
 import 'package:flutter_floating_menu/models/event.dart';
 import 'package:flutter_floating_menu/provider/event_provider.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +23,7 @@ class _AddEventState extends State<AddEvent> {
   final titleController = TextEditingController();
   late DateTime fromDate;
   late DateTime toDate;
+  List<Category> categories = Utils.getMockedCategories();
 
   @override
   void initState() {
@@ -55,7 +58,6 @@ class _AddEventState extends State<AddEvent> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                criaDropDownButton(),
                 buildTitle(),
                 SizedBox(
                   height: 12,
@@ -257,7 +259,7 @@ class _AddEventState extends State<AddEvent> {
         to: toDate,
       );
 
-      final provider = Provider.of<EventProvider>(context, listen: true);
+      final provider = Provider.of<EventProvider>(context, listen: false);
       provider.addEvent(event);
       Navigator.of(context).pop();
     }

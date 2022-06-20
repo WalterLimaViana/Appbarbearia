@@ -21,6 +21,12 @@ class _HomePageState extends State<HomePage> {
     pc = PageController(initialPage: paginaAtual);
   }
 
+  setPaginaAtual(pagina) {
+    setState(() {
+      paginaAtual = pagina;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

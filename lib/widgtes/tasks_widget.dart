@@ -54,7 +54,7 @@ class _TaskWidgetState extends State<TaskWidget> {
       child: Center(
         child: Text(
           event.title,
-          maxLines: 2,
+          maxLines: 4,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
             color: Colors.black,

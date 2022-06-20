@@ -22,8 +22,8 @@ class _CalendarioPageState extends State<CalendarioPage> {
         view: CalendarView.month,
         dataSource: EventDataSource(events),
         initialSelectedDate: DateTime.now(),
-        onLongPress: (details) {
-          final provider = Provider.of<EventProvider>(context, listen: true);
+        onTap: (details) {
+          final provider = Provider.of<EventProvider>(context, listen: false);
           provider.setDate(details.date!);
           showModalBottomSheet(
             context: context,
