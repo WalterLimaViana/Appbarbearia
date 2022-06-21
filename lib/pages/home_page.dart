@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/helpers/utils.dart';
-import 'package:flutter_floating_menu/models/category.dart';
-import 'package:flutter_floating_menu/pages/add_event.dart';
-import 'package:flutter_floating_menu/pages/calendario_page.dart';
-import 'package:flutter_floating_menu/pages/services_page.dart';
-import 'package:flutter_floating_menu/widgtes/fab_menu_button.dart';
+import 'package:appBarbearia/helpers/utils.dart';
+import 'package:appBarbearia/models/category.dart';
+import 'package:appBarbearia/pages/add_event.dart';
+import 'package:appBarbearia/pages/calendario_page.dart';
+import 'package:appBarbearia/pages/services_page.dart';
+import 'package:appBarbearia/widgtes/fab_menu_button.dart';
 
 class HomePage extends StatefulWidget {
   @override
