@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/helpers/utils.dart';
-import 'package:flutter_floating_menu/models/category.dart';
-import 'package:flutter_floating_menu/pages/add_event.dart';
+import 'package:appBarbearia/helpers/utils.dart';
+import 'package:appBarbearia/models/category.dart';
+import 'package:appBarbearia/pages/add_event.dart';
 
 class ServicesPage extends StatefulWidget {
   ServicesPage({Key? key}) : super(key: key);

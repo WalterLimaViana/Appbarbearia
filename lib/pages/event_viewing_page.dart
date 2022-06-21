@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/models/event.dart';
+import 'package:appBarbearia/models/event.dart';
 
 class EventViewingPage extends StatelessWidget {
   final Event event;

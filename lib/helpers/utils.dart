@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/models/category.dart';
+import 'package:appBarbearia/models/category.dart';
 
 class Utils {
   static List<Category> getMockedCategories() {

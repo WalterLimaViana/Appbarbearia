@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_floating_menu/models/event.dart';
+import 'package:appBarbearia/models/event.dart';
 
 class EventProvider extends ChangeNotifier {
   final List<Event> _events = [];

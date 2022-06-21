@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/helpers/util.dart';
-import 'package:flutter_floating_menu/helpers/utils.dart';
-import 'package:flutter_floating_menu/models/category.dart';
-import 'package:flutter_floating_menu/models/event.dart';
-import 'package:flutter_floating_menu/provider/event_provider.dart';
+import 'package:appBarbearia/helpers/util.dart';
+import 'package:appBarbearia/helpers/utils.dart';
+import 'package:appBarbearia/models/category.dart';
+import 'package:appBarbearia/models/event.dart';
+import 'package:appBarbearia/provider/event_provider.dart';
 import 'package:provider/provider.dart';
 
 class AddEvent extends StatefulWidget {

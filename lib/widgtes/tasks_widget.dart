@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/models/event_data_source.dart';
-import 'package:flutter_floating_menu/pages/event_viewing_page.dart';
-import 'package:flutter_floating_menu/provider/event_provider.dart';
+import 'package:appBarbearia/models/event_data_source.dart';
+import 'package:appBarbearia/pages/event_viewing_page.dart';
+import 'package:appBarbearia/provider/event_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:syncfusion_flutter_core/theme.dart';

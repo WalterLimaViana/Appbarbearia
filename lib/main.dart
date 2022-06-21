@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/pages/add_event.dart';
-import 'package:flutter_floating_menu/pages/login_page.dart';
-import 'package:flutter_floating_menu/pages/home_page.dart';
-import 'package:flutter_floating_menu/provider/event_provider.dart';
+import 'package:appBarbearia/pages/add_event.dart';
+import 'package:appBarbearia/pages/login_page.dart';
+import 'package:appBarbearia/pages/home_page.dart';
+import 'package:appBarbearia/provider/event_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {

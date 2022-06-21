@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_floating_menu/delegates/fab_vertical_delegate.dart';
-import 'package:flutter_floating_menu/pages/calendario_page.dart';
-import 'package:flutter_floating_menu/pages/contato_page.dart';
-import 'package:flutter_floating_menu/pages/home_page.dart';
+import 'package:appBarbearia/delegates/fab_vertical_delegate.dart';
+import 'package:appBarbearia/pages/calendario_page.dart';
+import 'package:appBarbearia/pages/contato_page.dart';
+import 'package:appBarbearia/pages/home_page.dart';
 
 class FabMenuButton extends StatefulWidget {
   FabMenuButton({Key? key}) : super(key: key);
